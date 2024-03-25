@@ -26,8 +26,7 @@ jobs:
 
       - name: Run headless browser to render scene
         run: |
-          npm install puppeteer-core
-          npx puppeteer-core \
+          npx puppeteer \
           --no-sandbox \
           --disable-setuid-sandbox \
           --disable-dev-shm-usage \
