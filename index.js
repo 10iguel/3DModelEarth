@@ -42,7 +42,6 @@ const cloudsMat = new THREE.MeshStandardMaterial({
   opacity: 0.8,
   blending: THREE.AdditiveBlending,
   alphaMap: loader.load('./textures/05_earthcloudmaptrans.jpg'),
-  // alphaTest: 0.3,
 });
 const cloudsMesh = new THREE.Mesh(geometry, cloudsMat);
 cloudsMesh.scale.setScalar(1.003);
