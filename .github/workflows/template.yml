@@ -20,6 +20,9 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+      - name: Install Puppeteer
+        run: npm install puppeteer
+
 
       - name: Run headless browser to render scene
         run: |
