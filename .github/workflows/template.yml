@@ -1,0 +1,33 @@
+name: Three.js Scene Renderer
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run headless browser to render scene
+        run: |
+          npm install puppeteer-core
+          npx puppeteer-core \
+          --no-sandbox \
+          --disable-setuid-sandbox \
+          --disable-dev-shm-usage \
+          --disable-accelerated-2d-canvas \
+          --disable-gpu \
+          index.html
